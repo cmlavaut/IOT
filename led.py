@@ -3,7 +3,7 @@ import time
 
 def main():
     gpio.setmode(gpio.BOARD)
-    gpio.setup(8, gpio.out)
+    gpio.setup(8, gpio.OUT)
 
     while True:
         gpio.output(8,1)
