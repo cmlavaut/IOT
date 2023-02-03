@@ -4,10 +4,10 @@ import time
 def main():
     gpio.setmode(gpio.BOARD)
     gpio.setup(8, gpio.OUT)
-    gpio.setup(10, gpio.IN, pull_up_down=gpio.PUD_DOWN)
+    gpio.setup(10, gpio.IN, pull_up_down=gpio.PUD_UP)
     
     while True:
-        if GPIO.input(10):
+        if gpio.input(10):
             gpio.output(8,1)
             time.sleep(0.1)
         else:
