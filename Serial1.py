@@ -13,21 +13,15 @@ def main():
     while True:
         sensor = arduino.readline()
         sensor = sensor.decode()
-        value= sensor.split()
-        print(value)
+        value= sensor.split(",")
+        if (len(value)==3):
+            print("temp:" , value[0])
+            print("distancia:" , value[1])
+            print("luz:" , value[2])
+        else:
+            print("valores incorrectos")
+        
        
-       """
-        try:
-            value = float(sensor[6:11])
-            if (value > 25.0):
-                gpio.output(8,1)
-            else:
-                gpio.output(8,0)
-            print(value)
-        except:
-            pass
-        """    
-
     
 
         
