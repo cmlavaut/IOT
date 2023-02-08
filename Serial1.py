@@ -4,11 +4,18 @@ import time
 
 def main():
     arduino = serial.Serial()
-    arduino.port = "/dev/ttyACM0"
-    arduino.baudrate = 9600
-    arduino.open()
-    #gpio.setmode(gpio.BOARD)
-    #gpio.setup(8,gpio.OUT)
+    try:
+        arduino.port= 'COM3'
+        arduino.baudrate = 9600
+        arduino.open()
+    except  serial.serialutil.PortNotOpenError:
+        print("no esta conectado a Windows")
+        arduino.port == "/dev/ttyACM0"
+        arduino.baudrate = 9600
+        arduino.open()
+    except:
+        print("Arduino no conectado")
+
 
     while True:
         sensor = arduino.readline()
