@@ -18,6 +18,7 @@ def main():
 
 
     while True:
+        arduino.flushInput()
         sensor = arduino.readline()
         sensor = sensor.decode()
         value= sensor.split(",")
