@@ -5,13 +5,13 @@ import time
 def main():
     arduino = serial.Serial()
     try:
-        arduino.port= 'COM3'
-        arduino.baudrate = 9600
+        arduino.port= 'COM5'
+        arduino.baudrate = 115200
         arduino.open()
     except  serial.serialutil.PortNotOpenError:
         print("no esta conectado a Windows")
         arduino.port == "/dev/ttyACM0"
-        arduino.baudrate = 9600
+        arduino.baudrate = 115200
         arduino.open()
     except:
         print("Arduino no conectado")
