@@ -5,8 +5,8 @@ import time
 def main():
     arduino = serial.Serial()
     try:
-        arduino.port= 'COM3'
-        arduino.baudrate = 9600
+        arduino.port= 'COM5'
+        arduino.baudrate = 115200
         arduino.open()
     except:
         try:
