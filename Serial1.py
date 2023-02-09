@@ -8,15 +8,17 @@ def main():
         arduino.port= 'COM3'
         arduino.baudrate = 9600
         arduino.open()
-    except  serial.serialutil.PortNotOpenError:
-        print("no esta conectado a Windows")
-        arduino.port == "/dev/ttyACM0"
-        arduino.baudrate = 9600
-        arduino.open()
     except:
-        print("Arduino no conectado")
+        try:
+            arduino.port = "/dev/ttyACM0"
+            arduino.baudrate = 9600
+            print(arduino.port)
+            arduino.open()
+        except:
+            print("Arduino no conectado")
+            quit()
 
-
+     
     while True:
         arduino.flushInput()
         sensor = arduino.readline()
