@@ -5,7 +5,8 @@ import time
 def main():
     arduino = serial.Serial()
     try:
-        arduino.port= 'COM5'
+        puerto= input("poner com")
+        arduino.port= 'COM' + puerto
         arduino.baudrate = 115200
         arduino.open()
     except  serial.serialutil.PortNotOpenError:
