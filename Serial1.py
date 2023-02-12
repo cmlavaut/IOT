@@ -1,11 +1,12 @@
 import serial
 #import RPi.GPIO as gpio
 import time
+import sys
 
 def main():
     arduino = serial.Serial()
     try:
-        puerto= input("poner com")
+        puerto= sys.argv[1]
         arduino.port= 'COM' + puerto
         arduino.baudrate = 115200
         arduino.open()
@@ -25,10 +26,12 @@ def main():
         sensor = arduino.readline()
         sensor = sensor.decode()
         value= sensor.split(",")
-        if (len(value)==3):
+        if (len(value)==4):
             print("temp:" , value[0])
             print("distancia:" , value[1])
             print("luz:" , value[2])
+            print("temp1:" , value[3])
+        
         else:
             print("valores incorrectos")
         
