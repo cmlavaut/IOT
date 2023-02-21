@@ -40,10 +40,12 @@ def main():
             print("humedad suelo: " , value[2])
             print("humedad relativa: " , value[3])
             print("temperatura: " , value[4])
+            print(" ")
             print(" ".join(value11[:2]))
             print("humedad suelo: ", value11[2])
             print("humedad relativa: ", value11[3])
             print("temperatura: ", value11[4])
+            print(" ")
         else:
             print("valores incorrectos")
     
